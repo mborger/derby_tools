@@ -20,7 +20,7 @@ PKGL = `pkg-config --libs gtkmm-3.0` -lboost_regex
 all: main
 
 main: src/main.cpp src/DerbyTools.h src/DerbyTools.cpp src/InputReader.h src/InputReader.cpp src/DerbyModel.h src/Team.h src/Team.cpp
-	${CC} src/main.cpp src/DerbyTools.cpp src/InputReader.cpp src/Team.cpp -o main -g `pkg-config --cflags --libs gtkmm-3.0` -lboost_regex
+	${CC} src/main.cpp src/DerbyTools.cpp src/InputReader.cpp src/Team.cpp -o main -g ${PKGC} ${PKGL}
 
 main.o: src/main.cpp
 	${CC} src/main.cpp -c ${CFLAGS} ${PKGC}
